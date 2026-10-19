@@ -55,10 +55,12 @@ header{position:sticky;top:0;z-index:10;padding:var(--s2) 0}
 .brand sup{font-size:.5em;font-weight:500;color:var(--ink-2)}
 .brand small{font-size:14px;font-weight:500;color:var(--ink-2)}
 .sp{flex:1}
+.navl{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none}
+.navl:hover{background:rgba(255,255,255,.7)}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;font:600 16px var(--font);text-decoration:none;color:var(--paper);background:var(--teal-deep);
   padding:0 22px;border-radius:999px;box-shadow:0 10px 24px -14px rgba(11,95,134,.9);transition:background-color .2s cubic-bezier(.25,1,.5,1)}
 .btn:hover{background:var(--teal-deeper)}
-.btn .short{display:none}
+.btn .short,.navl .short{display:none}
 
 /* hero: headline across, then copy left and the film right (5/7) */
 .hero{padding:var(--s5) var(--gutter) var(--s6);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:var(--s4);align-items:start}
@@ -110,9 +112,13 @@ footer p{margin:0}
 @media (max-width:560px){
   :root{--gutter:16px}
   .brand small{display:none}
-  .btn .full{display:none}.btn .short{display:inline}
+  .btn .full,.navl .full{display:none}.btn .short,.navl .short{display:inline}
+  .bar{gap:6px;padding-left:8px}
+  .brand{gap:8px;padding-right:0;font-size:18px}
+  .navl{padding:0 8px}
   .bar .btn{padding:0 18px}
 }
+@media (max-width:360px){.brand>span:not(.tile){display:none}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
 </head>
@@ -121,11 +127,12 @@ footer p{margin:0}
 <header>
   <div class="wrap">
     <nav class="bar" aria-label="Flowboard">
-      <a class="brand" href="#top">
+      <a class="brand" href="#top" aria-label="Flowboard par ELO">
         <span class="tile" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="4" width="5" height="8" rx="1.8"/><rect x="9.5" y="4" width="5" height="11" rx="1.8"/><rect x="16" y="4" width="5" height="16" rx="1.8"/></svg></span>
         <span>Flowboard<sup>™</sup></span><small>par ELO</small>
       </a>
       <span class="sp"></span>
+      <a class="navl" href="linkedin.html"><span class="full">Posts LinkedIn</span><span class="short">LinkedIn</span></a>
       <a class="btn" href="https://elo.blue"><span class="full">Réserver une démo</span><span class="short">Démo</span></a>
     </nav>
   </div>
